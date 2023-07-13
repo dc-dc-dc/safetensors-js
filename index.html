@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Safe Tensors Demo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./dist/safetensors.umd.js'></script>
+    <script>
+        const safetensors = globalThis.safetensors;
+        async function init() {
+            console.time("load tensor");
+            const res = await globalThis.safetensors.loadSafeTensor("./net.safetensors");
+            console.timeEnd("load tensor");
+            console.log("loaded up the tensor", res);
+        }
+        init();
+    </script>
+</head>
+
+<body>
+    <h1>testing</h1>
+</body>
+
+</html>
